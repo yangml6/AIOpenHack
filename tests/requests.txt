@@ -1,0 +1,22 @@
+import requests
+import json
+url = "https://southcentralus.api.cognitive.microsoft.com/customvision/v2.0/Prediction/093642e8-82a2-4655-bcd9-f7e88755b1c6/url?iterationId=e5f21f80-2e2c-4baf-9a8f-1adc2f10d043"
+#payload = {"url": "https://www.bfgcdn.com/1500_1500_90/002-1297-0111/houdini-candid-jacket-hard-hardshell-jacket.jpg"}
+payload = {"url": "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1526962252&di=f3b2a4503dfb2bb32f6930d4e217457c&src=http://imgsrc.baidu.com/imgad/pic/item/b21bb051f8198618877c8b8c40ed2e738bd4e6fb.jpg"}
+headers = {
+    'Content-Type':"application/json; charset=utf-8",
+    'Prediction-key': "ccc02a2ac2b241ceaea9f5b8637437d1"
+}
+response = requests.post(url,data=json.dumps(payload),headers=headers)
+print(response.text)
+
+
+img = Image.open('112127.jpeg')
+img = ImageOps.expand(img, border=100, fill='white'
+img = ImageOps.fit(img, size=(128, 128))
+
+img = ImageOps.autocontrast(img)
+
+plt.imshow(np.asarray(img))
+
+plt.hist(np.asarray(img).flatter, bins=50)
